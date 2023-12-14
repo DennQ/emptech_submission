@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Della+Respira&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Pacifico&family=Pangolin&family=Playfair:wght@300&family=Roboto:ital,wght@0,400;0,700;1,300&family=VT323&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/42696fbbae.js" crossorigin="anonymous"></script>
+    <title>EmpTech Website</title>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("uaOfhrHzF6IfYqdsd");
+        })();
+    </script>
+</head>
+
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/logo-2.svg">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Experiences</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Contact</a>
+                </li>
+                <li class="nav__link click" onClick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    "><i class="fa-solid fa-toggle-off"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hey,</h1>
+                <h1 class="title blue">I'm Angela<img class="navi" src="./assets/giphy.gif"></h1>
+                <p class="header__para">
+                    I'm a <b class="blue">Grade 12 - STEM student</b> with a strong passion for new
+                    experiences.
+                    <br>
+                    Here's a bit more <b class="blue" onclick="toggleModal()">about me</b>.<img class="about-logo"
+                        src="./assets/triforce-logo.gif">
+                </p>
+                <div class="social__list">
+                    <a href="" target="_blank" class="social__link click">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/DennQ" target="_blank" class="social__link click">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" download class="social__link click">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click">
+            </div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit more about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Grade 12 - STEM</h4>
+                <p class="modal__para">
+                    I'm a <b class="blue"> 17-year-old STEM student</b> in <b class="class">Grade 12</b> who is passionate about exploring the world of science and technology. Apart from academics, I find joy in playing games, which serve as a fun escape. Although I am happiest when I get to spend quality time with the people around me. I am someone who thrives on new challenges and experiences, always open-minded and eager to learn from whatever life brings my way. 
+                </p>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()" style="color: #f6f8f8;"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                    Currently open to new opportunities.
+                    <h3>
+                        <form id="contact__form" onsubmit="contact(event)">
+                            <div class="form__item">
+                                <label class="form__item--label">Name</label>
+                                <input class="input" name="user_name" type="text"></input>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__item--label">Email</label>
+                                <input class="input" name="user_email" type="email"></input>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__item--label">Message</label>
+                                <textarea class="input" name="message" type="text"></textarea>
+                            </div>
+                            <button id="contact__submit" class="form__submit">
+                                Send it my way!
+                            </button>
+                        </form>
+                        <div class="modal__overlay modal__overlay--loading">
+                            <i class="fa-solid fa-spinner fa-spin fa-spin-reverse" style="color: #4dc23d;"></i>
+                        </div>
+                        <div class="modal__overlay modal__overlay--success">
+                            Thank you for reaching out! I will get back to you soon!
+                            <img src="./assets/korok.gif">
+                        </div>
+            </div>
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/circle.svg" class="shape shape--3">
+        <img src="./assets/triangle.svg" class="shape shape--4">
+        <img src="./assets/semi circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+
+        </section>
+        <section id="projects">
+            <div class="container">
+                <div class="row">
+                    <h1 class="section__title">
+                        Here are some of my <span class="blue">experiences</span> this semester
+                        <img src="./assets/navi-icon.gif" class="project-logo">
+                    </h1>
+                    <ul class="project__list">
+                        <li class="project">
+                            <div class="project__wrapper">
+                                <img src="./assets/piczzz.png" class="project__img">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        Academic Highlights
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        Favorite Subjects & Courses
+                                    </h4>
+                                    <p class="project__description--para">
+                                        This semester has been packed with challenging subjects, but amidst them all, <span class="blue">Mathematics</span> stood out as the most enjoyable for me. Despite its complexity, I found it surprisingly engaging and fun! Each topic brought its own set of challenges, yet I approached them with enthusiasm and didn't feel overwhelmed by the learning process.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="project">
+                            <div class="project__wrapper">
+                                <img src="./assets/class_pic.png" class="project__img">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        Academic Highlights 
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        Memorable Classroom Moments 
+                                    </h4>
+                                    <p class="project__description--para">
+                                        I think the <span class="blue">kwento moments</span> were the most memorable classroom moments that I've ever had. They weren't just times wherein we told random stories, they were opportunities to be closer to one another. These moments made the classroom a comfortable space where anyone could say anything, and we'd all be there to listen.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="project">
+                            <div class="project__wrapper">
+                                <img src="./assets/talaban_img.jpg" class="project__img">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        Talaban Encounters 
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        Experience and Realizations
+                                    </h4>
+                                    <p class="project__description--para">
+                                        Participating in the Talaban encounters helped me learn more about the different struggles people go through; it broadened my perspective on life and made me appreciate the things I had even more. It made me realize that I don't know the struggles that everyone goes through and that a little bit of kindness and care goes a long way for them. I also learned that I should be more open minded when it comes to the problems of others, as they don't have the same opportunities as we do.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="project">
+                            <div class="project__wrapper">
+                                <img src="./assets/intrams.JPG" class="project__img">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        Batch Activities
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        Intramurals
+                                    </h4>
+                                    <p class="project__description--para">
+                                        I had a great time during the intramurals, enjoying the company of my batchmates and reconnecting with everyone. It was a valuable experience that allowed me to understand the essence of bonding once again. Throughout the event, I gained insights into the significance of teamwork and learned how to handle both victory and defeat gracefully.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="project">
+                            <div class="project__wrapper">
+                                <img src="./assets/thumbs_up.png" class="project__img">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        Reflections
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        along with some of the lessons I learned
+                                    </h4>
+                                    <p class="project__description--para">
+                                        This semester, amidst challenging subjects, Mathematics unexpectedly became enjoyable, teaching me the value of embracing complexity with enthusiasm. Engaging in "kwento moments" in class taught me the significance of fostering a supportive environment where stories build connections and comfort. Through the Talaban encounters, I realized the importance of empathy and kindness, gaining insight into different kinds of struggles. Participating in intramurals reinforced essential lessons in teamwork, resilience, and graceful acceptance of both success and failure, highlighting the significance of camaraderie and mutual support among peers.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+
+
+                <figure>
+                    <img class="footer__logo--img" src="./assets/skull-kid-logo.gif">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://github.com/DennQ" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                        Github
+                    </a>
+                    <a href="#" onclick="toggleModal()" class="
+        footer__social--link
+        link__hover-effect
+        link__hover-effect--white
+        ">
+                        Email
+                    </a>
+                    <a href="#" class="
+        footer__social--link
+        link__hover-effect
+        link__hover-effect--white
+        ">
+                        Resume
+                    </a>
+                </div>
+                <div class="footer__copyright">Made by Angela Que</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
